@@ -1,1 +1,21 @@
 "Server=(localdb)\\msSqllocaldb;Database=_24x7Store-IED06986-5F07-4A1C-8589-D9;Trusted_Connection=True;MultipleActiveResultSets=true"
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+
+namespace _24x7Store.Models
+{
+    public class AppDbContext: DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+
+        }
+        public DbSet<Category> Categories {get; set;}
+        public DbSet<Pie> Pies { get; set; }
+    }
+}
